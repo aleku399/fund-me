@@ -1,2 +1,7 @@
-[build]
-  command = "npm install --legacy-peer-deps && npm run build"
+[[edge_functions]]
+path = "/create-campaign"
+function = "auth"
+
+[[edge_functions]]
+path = "/campaigns/*"
+function = "auth"
