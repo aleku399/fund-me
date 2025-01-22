@@ -7,7 +7,7 @@ export default function DashboardPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-grow">
-        <Dashboard  />
+        <Dashboard />
       </div>
       <Footer />
     </div>
