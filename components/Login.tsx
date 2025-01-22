@@ -29,7 +29,7 @@ export default function LoginPage() {
       if (response.user_access_token) {
         localStorage.setItem("token", response.user_access_token);
         authLogin(response.user_access_token);
-        router.push("/"); 
+        router.push("/");
       } else {
         setError("Invalid email or password. Please try again.");
       }
@@ -50,7 +50,9 @@ export default function LoginPage() {
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {error && <div className="text-red-500 text-sm text-center">{error}</div>}
+            {error && (
+              <div className="text-red-500 text-sm text-center">{error}</div>
+            )}
 
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -74,9 +76,10 @@ export default function LoginPage() {
               />
             </div>
 
-
-
-            <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800">
+            <Button
+              type="submit"
+              className="w-full bg-blue-700 hover:bg-blue-800"
+            >
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -88,9 +91,24 @@ export default function LoginPage() {
             </Button>
 
             <div className="text-center">
-              <Link href="/forgot-password" className="text-blue-600 hover:underline text-sm">
+              <Link
+                href="/forgot-password"
+                className="text-blue-600 hover:underline text-sm"
+              >
                 Forgot Password
               </Link>
+            </div>
+
+            <div className="text-center mt-2">
+              <span className="text-sm text-gray-600">
+                Don&apos;t have an account?{" "}
+                <Link
+                  href="/register"
+                  className="text-blue-600 hover:underline"
+                >
+                  Register here
+                </Link>
+              </span>
             </div>
           </form>
         </div>
