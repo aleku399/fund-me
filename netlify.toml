@@ -1,4 +1,8 @@
 [[edge_functions]]
+path = "/"
+function = "auth"
+
+[[edge_functions]]
 path = "/create-campaign"
 function = "auth"
 
